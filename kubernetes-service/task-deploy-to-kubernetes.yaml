@@ -118,7 +118,7 @@ spec:
         fi
 
         if ibmcloud ks cluster get --cluster $PIPELINE_KUBERNETES_CLUSTER_NAME; then
-          eval $(ibmcloud ks cluster config --cluster $PIPELINE_KUBERNETES_CLUSTER_NAME --export -s)
+          eval $(ibmcloud ks cluster config --cluster $PIPELINE_KUBERNETES_CLUSTER_NAME --admin --export -s)
         else
           echo "Cluster $PIPELINE_KUBERNETES_CLUSTER_NAME not found. Accessible clusters are:"
           ibmcloud ks clusters
